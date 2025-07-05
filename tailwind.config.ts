@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Moroccan travel theme colors
+				'moroccan-red': 'hsl(var(--moroccan-red))',
+				'moroccan-gold': 'hsl(var(--moroccan-gold))',
+				'atlas-blue': 'hsl(var(--atlas-blue))',
+				'sahara-sand': 'hsl(var(--sahara-sand))',
+				'desert-sunset': 'hsl(var(--desert-sunset))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
