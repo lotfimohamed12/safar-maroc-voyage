@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,6 +27,7 @@ const moroccanCities = [
 ];
 
 export const SearchForm = ({ onSearch }: SearchFormProps) => {
+  const { t } = useTranslation();
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [date, setDate] = useState<Date>(new Date());
@@ -58,7 +60,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
           {/* From City */}
           <div className="md:col-span-4 relative">
-            <label className="block text-sm font-medium mb-2 text-foreground">From</label>
+            <label className="block text-sm font-medium mb-2 text-foreground">{t('search.from')}</label>
             <div className="relative">
               <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input
@@ -68,7 +70,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
                   setShowFromSuggestions(true);
                 }}
                 onFocus={() => setShowFromSuggestions(true)}
-                placeholder="Departure city"
+                placeholder="Casablanca"
                 className="pl-10 h-12 border-muted focus:border-primary transition-colors"
               />
               {showFromSuggestions && from && (
@@ -106,7 +108,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
 
           {/* To City */}
           <div className="md:col-span-4 relative">
-            <label className="block text-sm font-medium mb-2 text-foreground">To</label>
+            <label className="block text-sm font-medium mb-2 text-foreground">{t('search.to')}</label>
             <div className="relative">
               <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input
@@ -116,7 +118,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
                   setShowToSuggestions(true);
                 }}
                 onFocus={() => setShowToSuggestions(true)}
-                placeholder="Destination city"
+                placeholder="Marrakech"
                 className="pl-10 h-12 border-muted focus:border-primary transition-colors"
               />
               {showToSuggestions && to && (
@@ -141,7 +143,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
 
           {/* Date Picker */}
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium mb-2 text-foreground">Date</label>
+            <label className="block text-sm font-medium mb-2 text-foreground">{t('search.departure')}</label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
@@ -169,7 +171,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
 
           {/* Passengers */}
           <div className="md:col-span-1">
-            <label className="block text-sm font-medium mb-2 text-foreground">Passengers</label>
+            <label className="block text-sm font-medium mb-2 text-foreground">{t('search.passengers')}</label>
             <Input
               type="number"
               min="1"
@@ -186,7 +188,7 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
           className="w-full h-12 bg-gradient-to-r from-primary to-desert-sunset hover:opacity-90 transition-opacity text-lg font-medium"
           disabled={!from || !to}
         >
-          Search Trips
+          {t('search.searchButton')}
         </Button>
       </form>
     </Card>

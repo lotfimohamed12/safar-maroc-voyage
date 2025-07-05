@@ -1,0 +1,72 @@
+{
+  "app": {
+    "name": "DabaRide.ma",
+    "tagline": "Your gateway to exploring Morocco"
+  },
+  "nav": {
+    "search": "Search",
+    "bookings": "My Bookings",
+    "help": "Help",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "hero": {
+    "title": "Discover Morocco",
+    "subtitle": "Your Way",
+    "description": "Compare and book flights, trains, buses, and carpools across Morocco. Find the best routes from the Atlas Mountains to the Sahara Desert."
+  },
+  "search": {
+    "from": "From",
+    "to": "To",
+    "departure": "Departure Date",
+    "passengers": "Passengers",
+    "searchButton": "Search Routes"
+  },
+  "transport": {
+    "title": "Choose Your Transport",
+    "flights": "Flights",
+    "trains": "Trains",
+    "buses": "Buses",
+    "carpool": "Carpool",
+    "selected": "Selected",
+    "select": "Select"
+  },
+  "results": {
+    "title": "Search Results",
+    "price": "Price",
+    "duration": "Duration", 
+    "departure": "Departure",
+    "arrival": "Arrival",
+    "book": "Book Now"
+  },
+  "features": {
+    "title": "Why Choose DabaRide.ma?",
+    "allOptions": "All Options",
+    "allOptionsDesc": "Compare flights, trains, buses, and carpools in one place",
+    "bestPrices": "Best Prices",
+    "bestPricesDesc": "Find the most affordable travel options across Morocco",
+    "easyBooking": "Easy Booking",
+    "easyBookingDesc": "Book directly or get redirected to trusted providers"
+  },
+  "footer": {
+    "description": "Your gateway to exploring Morocco through every mode of transportation.",
+    "travel": "Travel",
+    "support": "Support",
+    "languages": "Languages",
+    "helpCenter": "Help Center",
+    "contactUs": "Contact Us",
+    "bookingSupport": "Booking Support",
+    "travelTips": "Travel Tips",
+    "copyright": "© 2024 DabaRide.ma. Made with ❤️ for Morocco travelers."
+  },
+  "auth": {
+    "phoneNumber": "Phone Number",
+    "enterPhone": "Enter your Moroccan phone number",
+    "sendOTP": "Send Code",
+    "enterOTP": "Enter verification code",
+    "verify": "Verify",
+    "resendOTP": "Resend Code",
+    "login": "Login",
+    "register": "Register"
+  }
+}

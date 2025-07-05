@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Header } from "@/components/Header";
 import { SearchForm, SearchData } from "@/components/SearchForm";
 import { TransportationModes } from "@/components/TransportationModes";
@@ -6,6 +7,7 @@ import { SearchResults } from "@/components/SearchResults";
 import heroImage from "@/assets/morocco-travel-hero.jpg";
 
 const Index = () => {
+  const { t } = useTranslation();
   const [searchData, setSearchData] = useState<SearchData | null>(null);
   const [selectedModes, setSelectedModes] = useState<string[]>(["flight", "train", "bus", "carpool"]);
   const [showResults, setShowResults] = useState(false);
@@ -38,14 +40,13 @@ const Index = () => {
         <div className="relative container mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-              Discover Morocco
+              {t('hero.title')}
               <span className="block bg-gradient-to-r from-primary to-desert-sunset bg-clip-text text-transparent">
-                Your Way
+                {t('hero.subtitle')}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Compare and book flights, trains, buses, and carpools across Morocco. 
-              Find the best routes from the Atlas Mountains to the Sahara Desert.
+              {t('hero.description')}
             </p>
           </div>
 

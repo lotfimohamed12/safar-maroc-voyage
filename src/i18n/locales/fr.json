@@ -1,0 +1,72 @@
+{
+  "app": {
+    "name": "DabaRide.ma",
+    "tagline": "Votre passerelle pour explorer le Maroc"
+  },
+  "nav": {
+    "search": "Recherche",
+    "bookings": "Mes Réservations",
+    "help": "Aide",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire"
+  },
+  "hero": {
+    "title": "Découvrez le Maroc",
+    "subtitle": "À votre façon",
+    "description": "Comparez et réservez vols, trains, bus et covoiturage à travers le Maroc. Trouvez les meilleurs itinéraires des montagnes de l'Atlas au désert du Sahara."
+  },
+  "search": {
+    "from": "De",
+    "to": "À",
+    "departure": "Date de départ",
+    "passengers": "Passagers",
+    "searchButton": "Rechercher des trajets"
+  },
+  "transport": {
+    "title": "Choisissez votre transport",
+    "flights": "Vols",
+    "trains": "Trains",
+    "buses": "Bus",
+    "carpool": "Covoiturage",
+    "selected": "Sélectionné",
+    "select": "Sélectionner"
+  },
+  "results": {
+    "title": "Résultats de recherche",
+    "price": "Prix",
+    "duration": "Durée",
+    "departure": "Départ",
+    "arrival": "Arrivée",
+    "book": "Réserver maintenant"
+  },
+  "features": {
+    "title": "Pourquoi choisir DabaRide.ma ?",
+    "allOptions": "Toutes les options",
+    "allOptionsDesc": "Comparez vols, trains, bus et covoiturage en un seul endroit",
+    "bestPrices": "Meilleurs prix",
+    "bestPricesDesc": "Trouvez les options de voyage les plus abordables à travers le Maroc",
+    "easyBooking": "Réservation facile",
+    "easyBookingDesc": "Réservez directement ou soyez redirigé vers des prestataires de confiance"
+  },
+  "footer": {
+    "description": "Votre passerelle pour explorer le Maroc à travers tous les modes de transport.",
+    "travel": "Voyage",
+    "support": "Support",
+    "languages": "Langues",
+    "helpCenter": "Centre d'aide",
+    "contactUs": "Nous contacter",
+    "bookingSupport": "Support réservation",
+    "travelTips": "Conseils voyage",
+    "copyright": "© 2024 DabaRide.ma. Fait avec ❤️ pour les voyageurs du Maroc."
+  },
+  "auth": {
+    "phoneNumber": "Numéro de téléphone",
+    "enterPhone": "Entrez votre numéro marocain",
+    "sendOTP": "Envoyer le code",
+    "enterOTP": "Entrez le code de vérification",
+    "verify": "Vérifier",
+    "resendOTP": "Renvoyer le code",
+    "login": "Se connecter",
+    "register": "S'inscrire"
+  }
+}

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -43,10 +44,12 @@ const transportModes = [
 ];
 
 export const TransportationModes = ({ selectedModes, onModeToggle }: TransportationModesProps) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="w-full max-w-6xl mx-auto">
       <h2 className="text-2xl font-bold text-center mb-8 text-foreground">
-        Choose Your Transport
+        {t('transport.title')}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {transportModes.map((mode) => {
@@ -64,7 +67,7 @@ export const TransportationModes = ({ selectedModes, onModeToggle }: Transportat
             >
               <div className="text-center space-y-4">
                 <div className="text-4xl mb-2">{mode.icon}</div>
-                <h3 className="text-xl font-semibold text-foreground">{mode.name}</h3>
+                <h3 className="text-xl font-semibold text-foreground">{t(`transport.${mode.id}`)}</h3>
                 <div className="space-y-2">
                   <Badge variant="secondary" className="text-xs">
                     {mode.avgTime}
@@ -87,7 +90,7 @@ export const TransportationModes = ({ selectedModes, onModeToggle }: Transportat
                       : 'border-muted hover:border-primary hover:bg-primary/10'
                   }`}
                 >
-                  {isSelected ? "Selected" : "Select"}
+                  {isSelected ? t('transport.selected') : t('transport.select')}
                 </Button>
               </div>
             </Card>

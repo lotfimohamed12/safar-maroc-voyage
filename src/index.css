@@ -121,4 +121,13 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .flex {
+    flex-direction: row-reverse;
+  }
 }
