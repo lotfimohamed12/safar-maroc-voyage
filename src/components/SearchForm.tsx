@@ -8,6 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { CalendarIcon, MapPin, ArrowRightLeft } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import citiesConfig from "@/config/cities.json";
 
 interface SearchFormProps {
   onSearch: (searchData: SearchData) => void;
@@ -20,14 +21,9 @@ export interface SearchData {
   passengers: number;
 }
 
-const moroccanCities = [
-  "Casablanca", "Rabat", "Fès", "Marrakech", "Agadir", "Tanger", 
-  "Meknès", "Oujda", "Tétouan", "Salé", "Kénitra", "El Jadida",
-  "Beni Mellal", "Khemisset", "Nador", "Settat"
-];
-
 export const SearchForm = ({ onSearch }: SearchFormProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const cities = citiesConfig.cities;
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [date, setDate] = useState<Date>(new Date());
@@ -49,9 +45,10 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
   };
 
   const filterCities = (query: string) => {
-    return moroccanCities.filter(city => 
-      city.toLowerCase().includes(query.toLowerCase())
-    );
+    return cities.filter(city => {
+      const cityName = city.name[i18n.language as keyof typeof city.name] || city.name.en;
+      return cityName.toLowerCase().includes(query.toLowerCase());
+    });
   };
 
   return (

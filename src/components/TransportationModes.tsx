@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import transportConfig from "@/config/transportModes.json";
 
 interface TransportationModesProps {
   selectedModes: string[];
@@ -44,7 +45,8 @@ const transportModes = [
 ];
 
 export const TransportationModes = ({ selectedModes, onModeToggle }: TransportationModesProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const transportModes = transportConfig.transportModes;
   
   return (
     <div className="w-full max-w-6xl mx-auto">

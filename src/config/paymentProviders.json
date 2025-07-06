@@ -1,0 +1,64 @@
+{
+  "paymentProviders": [
+    {
+      "id": "visa_mastercard",
+      "name": {
+        "ar": "فيزا / ماستركارد",
+        "fr": "Visa / Mastercard",
+        "en": "Visa / Mastercard"
+      },
+      "type": "card",
+      "icon": "💳",
+      "enabled": true,
+      "config": {
+        "endpoint": "/api/payments/card",
+        "publicKey": ""
+      }
+    },
+    {
+      "id": "payzone",
+      "name": {
+        "ar": "بايزون",
+        "fr": "Payzone",
+        "en": "Payzone"
+      },
+      "type": "local",
+      "icon": "🇲🇦",
+      "enabled": true,
+      "config": {
+        "endpoint": "https://api.payzone.ma/v1",
+        "merchantId": ""
+      }
+    },
+    {
+      "id": "cih_pay",
+      "name": {
+        "ar": "سي آي إتش باي",
+        "fr": "CIH Pay",
+        "en": "CIH Pay"
+      },
+      "type": "mobile",
+      "icon": "📱",
+      "enabled": true,
+      "config": {
+        "endpoint": "https://api.cih.ma/pay/v1",
+        "appId": ""
+      }
+    },
+    {
+      "id": "maroc_telecommerce",
+      "name": {
+        "ar": "المغرب تيليكوم",
+        "fr": "Maroc Télécommerce",
+        "en": "Maroc Telecommerce"
+      },
+      "type": "mobile",
+      "icon": "📲",
+      "enabled": false,
+      "config": {
+        "endpoint": "https://api.telecommerce.ma/v1",
+        "merchantCode": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "cities": [
+    {
+      "id": "casablanca",
+      "name": {
+        "ar": "الدار البيضاء",
+        "fr": "Casablanca",
+        "en": "Casablanca"
+      },
+      "coordinates": {
+        "lat": 33.5731,
+        "lng": -7.5898
+      }
+    },
+    {
+      "id": "rabat",
+      "name": {
+        "ar": "الرباط",
+        "fr": "Rabat",
+        "en": "Rabat"
+      },
+      "coordinates": {
+        "lat": 34.0209,
+        "lng": -6.8416
+      }
+    },
+    {
+      "id": "marrakech",
+      "name": {
+        "ar": "مراكش",
+        "fr": "Marrakech",
+        "en": "Marrakech"
+      },
+      "coordinates": {
+        "lat": 31.6295,
+        "lng": -7.9811
+      }
+    },
+    {
+      "id": "fes",
+      "name": {
+        "ar": "فاس",
+        "fr": "Fès",
+        "en": "Fes"
+      },
+      "coordinates": {
+        "lat": 34.0181,
+        "lng": -5.0078
+      }
+    },
+    {
+      "id": "tangier",
+      "name": {
+        "ar": "طنجة",
+        "fr": "Tanger",
+        "en": "Tangier"
+      },
+      "coordinates": {
+        "lat": 35.7595,
+        "lng": -5.8340
+      }
+    },
+    {
+      "id": "agadir",
+      "name": {
+        "ar": "أكادير",
+        "fr": "Agadir",
+        "en": "Agadir"
+      },
+      "coordinates": {
+        "lat": 30.4278,
+        "lng": -9.5981
+      }
+    },
+    {
+      "id": "meknes",
+      "name": {
+        "ar": "مكناس",
+        "fr": "Meknès",
+        "en": "Meknes"
+      },
+      "coordinates": {
+        "lat": 33.8935,
+        "lng": -5.5473
+      }
+    },
+    {
+      "id": "oujda",
+      "name": {
+        "ar": "وجدة",
+        "fr": "Oujda",
+        "en": "Oujda"
+      },
+      "coordinates": {
+        "lat": 34.6814,
+        "lng": -1.9086
+      }
+    },
+    {
+      "id": "tetouan",
+      "name": {
+        "ar": "تطوان",
+        "fr": "Tétouan",
+        "en": "Tetouan"
+      },
+      "coordinates": {
+        "lat": 35.5889,
+        "lng": -5.3626
+      }
+    },
+    {
+      "id": "kenitra",
+      "name": {
+        "ar": "القنيطرة",
+        "fr": "Kénitra",
+        "en": "Kenitra"
+      },
+      "coordinates": {
+        "lat": 34.2610,
+        "lng": -6.5802
+      }
+    }
+  ]
+}

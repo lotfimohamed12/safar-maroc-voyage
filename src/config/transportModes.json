@@ -1,0 +1,82 @@
+{
+  "transportModes": [
+    {
+      "id": "train",
+      "name": {
+        "ar": "القطار",
+        "fr": "Train",
+        "en": "Train"
+      },
+      "icon": "🚄",
+      "providers": [
+        {
+          "name": "ONCF",
+          "apiUrl": "https://api.oncf.ma/v1",
+          "mockData": true
+        }
+      ],
+      "color": "#2563eb"
+    },
+    {
+      "id": "bus",
+      "name": {
+        "ar": "الحافلة",
+        "fr": "Bus",
+        "en": "Bus"
+      },
+      "icon": "🚌",
+      "providers": [
+        {
+          "name": "Supratours",
+          "apiUrl": "https://api.supratours.ma/v1",
+          "mockData": true
+        },
+        {
+          "name": "CTM",
+          "apiUrl": "https://api.ctm.ma/v1",
+          "mockData": true
+        }
+      ],
+      "color": "#dc2626"
+    },
+    {
+      "id": "flight",
+      "name": {
+        "ar": "الطائرة",
+        "fr": "Vol",
+        "en": "Flight"
+      },
+      "icon": "✈️",
+      "providers": [
+        {
+          "name": "Royal Air Maroc",
+          "apiUrl": "https://api.royalairmaroc.com/v1",
+          "mockData": true
+        },
+        {
+          "name": "Air Arabia",
+          "apiUrl": "https://api.airarabiagroup.com/v1",
+          "mockData": true
+        }
+      ],
+      "color": "#0891b2"
+    },
+    {
+      "id": "carpool",
+      "name": {
+        "ar": "المشاركة في السيارة",
+        "fr": "Covoiturage",
+        "en": "Carpool"
+      },
+      "icon": "🚗",
+      "providers": [
+        {
+          "name": "BlaBlaCar",
+          "apiUrl": "https://api.blablacar.com/v1",
+          "mockData": true
+        }
+      ],
+      "color": "#059669"
+    }
+  ]
+}
