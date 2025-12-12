@@ -39,12 +39,12 @@ const MyBookings = () => {
   const fetchBookings = async () => {
     try {
       const { data, error } = await supabase
-        .from('bookings')
+        .from('bookings' as any)
         .select('*')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setBookings(data || []);
+      setBookings((data as unknown as Booking[]) || []);
     } catch (error) {
       console.error('Error fetching bookings:', error);
     } finally {
