@@ -66,7 +66,7 @@ const Index = () => {
       {showResults && (
         <section className="py-16 px-4 bg-gradient-to-b from-sahara-sand/10 to-background">
           <div className="container mx-auto">
-            <SearchResults />
+            <SearchResults destinationCity={searchData?.to} />
           </div>
         </section>
       )}

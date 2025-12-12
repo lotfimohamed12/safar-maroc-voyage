@@ -1,1 +1,4 @@
 project_id = "uhohjnovshnnzkmrsryc"
+
+[functions.city-suggestions]
+verify_jwt = false

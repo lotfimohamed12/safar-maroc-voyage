@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, Star } from "lucide-react";
+import CitySuggestions from "./CitySuggestions";
 
 interface TripOption {
   id: string;
@@ -22,6 +23,7 @@ interface TripOption {
 interface SearchResultsProps {
   results?: TripOption[];
   loading?: boolean;
+  destinationCity?: string;
 }
 
 const mockResults: TripOption[] = [
@@ -101,7 +103,7 @@ const typeColors = {
   carpool: "accent"
 };
 
-export const SearchResults = ({ results = mockResults, loading = false }: SearchResultsProps) => {
+export const SearchResults = ({ results = mockResults, loading = false, destinationCity }: SearchResultsProps) => {
   if (loading) {
     return (
       <div className="w-full max-w-4xl mx-auto space-y-4">
@@ -207,6 +209,8 @@ export const SearchResults = ({ results = mockResults, loading = false }: Search
           </Card>
         ))}
       </div>
+
+      {destinationCity && <CitySuggestions city={destinationCity} />}
     </div>
   );
 };
