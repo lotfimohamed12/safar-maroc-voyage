@@ -18,27 +18,29 @@ serve(async (req) => {
       throw new Error('City is required');
     }
 
-    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
-    if (!ANTHROPIC_API_KEY) {
-      throw new Error('ANTHROPIC_API_KEY is not configured');
+    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    if (!LOVABLE_API_KEY) {
+      throw new Error('LOVABLE_API_KEY is not configured');
     }
 
     console.log(`Generating suggestions for city: ${city}`);
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'x-api-key': ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
+        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
+        model: 'google/gemini-2.5-flash',
         messages: [
           {
+            role: 'system',
+            content: 'You are a travel guide expert for Morocco. Always respond with valid JSON only, no markdown or extra text.'
+          },
+          {
             role: 'user',
-            content: `You are a travel guide expert for Morocco. Give me 5 amazing things to do in or around ${city}, Morocco. 
+            content: `Give me 5 amazing things to do in or around ${city}, Morocco. 
             
 For each suggestion, provide:
 - A catchy title
@@ -64,22 +66,47 @@ Only respond with the JSON, no other text.`
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Anthropic API error:', response.status, errorText);
-      throw new Error(`Anthropic API error: ${response.status}`);
+      console.error('Lovable AI error:', response.status, errorText);
+      
+      if (response.status === 429) {
+        return new Response(JSON.stringify({ error: 'Rate limit exceeded, please try again later.' }), {
+          status: 429,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (response.status === 402) {
+        return new Response(JSON.stringify({ error: 'AI credits exhausted.' }), {
+          status: 402,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      throw new Error(`AI API error: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log('Claude response received');
+    console.log('AI response received');
     
-    // Extract the text content from Claude's response
-    const textContent = data.content?.find((c: any) => c.type === 'text')?.text;
+    // Extract the content from the response
+    const textContent = data.choices?.[0]?.message?.content;
     
     if (!textContent) {
-      throw new Error('No text content in response');
+      throw new Error('No content in response');
     }
 
-    // Parse the JSON from Claude's response
-    const suggestions = JSON.parse(textContent);
+    // Parse the JSON from the response (handle potential markdown wrapping)
+    let jsonString = textContent.trim();
+    if (jsonString.startsWith('```json')) {
+      jsonString = jsonString.slice(7);
+    }
+    if (jsonString.startsWith('```')) {
+      jsonString = jsonString.slice(3);
+    }
+    if (jsonString.endsWith('```')) {
+      jsonString = jsonString.slice(0, -3);
+    }
+    
+    const suggestions = JSON.parse(jsonString.trim());
 
     return new Response(JSON.stringify(suggestions), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
