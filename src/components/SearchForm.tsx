@@ -72,19 +72,22 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
               />
               {showFromSuggestions && from && (
                 <div className="absolute top-full left-0 right-0 bg-card border border-muted rounded-md shadow-lg z-10 max-h-48 overflow-y-auto">
-                  {filterCities(from).map((city) => (
-                    <button
-                      key={city}
-                      type="button"
-                      onClick={() => {
-                        setFrom(city);
-                        setShowFromSuggestions(false);
-                      }}
-                      className="w-full text-left px-4 py-2 hover:bg-sahara-sand/50 transition-colors"
-                    >
-                      {city}
-                    </button>
-                  ))}
+                  {filterCities(from).map((city) => {
+                    const cityName = city.name[i18n.language as keyof typeof city.name] || city.name.en;
+                    return (
+                      <button
+                        key={city.id}
+                        type="button"
+                        onClick={() => {
+                          setFrom(cityName);
+                          setShowFromSuggestions(false);
+                        }}
+                        className="w-full text-left px-4 py-2 hover:bg-sahara-sand/50 transition-colors"
+                      >
+                        {cityName}
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -120,19 +123,22 @@ export const SearchForm = ({ onSearch }: SearchFormProps) => {
               />
               {showToSuggestions && to && (
                 <div className="absolute top-full left-0 right-0 bg-card border border-muted rounded-md shadow-lg z-10 max-h-48 overflow-y-auto">
-                  {filterCities(to).map((city) => (
-                    <button
-                      key={city}
-                      type="button"
-                      onClick={() => {
-                        setTo(city);
-                        setShowToSuggestions(false);
-                      }}
-                      className="w-full text-left px-4 py-2 hover:bg-sahara-sand/50 transition-colors"
-                    >
-                      {city}
-                    </button>
-                  ))}
+                  {filterCities(to).map((city) => {
+                    const cityName = city.name[i18n.language as keyof typeof city.name] || city.name.en;
+                    return (
+                      <button
+                        key={city.id}
+                        type="button"
+                        onClick={() => {
+                          setTo(cityName);
+                          setShowToSuggestions(false);
+                        }}
+                        className="w-full text-left px-4 py-2 hover:bg-sahara-sand/50 transition-colors"
+                      >
+                        {cityName}
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>

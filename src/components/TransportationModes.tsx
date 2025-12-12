@@ -9,40 +9,12 @@ interface TransportationModesProps {
   onModeToggle: (mode: string) => void;
 }
 
-const transportModes = [
-  {
-    id: "flight",
-    icon: "✈️",
-    name: "Flights",
-    providers: ["Royal Air Maroc", "Air Arabia"],
-    avgTime: "1-2h",
-    color: "atlas-blue"
-  },
-  {
-    id: "train",
-    icon: "🚆",
-    name: "Trains",
-    providers: ["ONCF", "Al Boraq"],
-    avgTime: "2-4h",
-    color: "moroccan-gold"
-  },
-  {
-    id: "bus",
-    icon: "🚌",
-    name: "Buses",
-    providers: ["CTM", "Supratours"],
-    avgTime: "3-8h",
-    color: "moroccan-red"
-  },
-  {
-    id: "carpool",
-    icon: "🚗",
-    name: "Carpool",
-    providers: ["BlaBlaCar", "Local drivers"],
-    avgTime: "Variable",
-    color: "accent"
-  }
-];
+const avgTimes: Record<string, string> = {
+  train: "2-4h",
+  bus: "3-8h",
+  flight: "1-2h",
+  carpool: "Variable"
+};
 
 export const TransportationModes = ({ selectedModes, onModeToggle }: TransportationModesProps) => {
   const { t, i18n } = useTranslation();
@@ -72,12 +44,12 @@ export const TransportationModes = ({ selectedModes, onModeToggle }: Transportat
                 <h3 className="text-xl font-semibold text-foreground">{t(`transport.${mode.id}`)}</h3>
                 <div className="space-y-2">
                   <Badge variant="secondary" className="text-xs">
-                    {mode.avgTime}
+                    {avgTimes[mode.id] || "Variable"}
                   </Badge>
                   <div className="text-sm text-muted-foreground">
                     {mode.providers.map((provider, idx) => (
-                      <div key={provider} className="truncate">
-                        {provider}
+                      <div key={provider.name} className="truncate">
+                        {provider.name}
                         {idx < mode.providers.length - 1 && ", "}
                       </div>
                     ))}
